@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap');
+
+.BrandTextLogo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 30px 38px 20px 38px;
+    
+    .TextLogo {
+        color: #E51837;
+        font-family: 'Exo 2';
+        font-weight: 700;
+        font-size: 22px;
+        font-style: italic;
+        letter-spacing: 2px;
+        cursor: pointer;
+    }
+}
+
+.navItemButton:hover {
+    border-radius: 10px;
+    background-color: rgba(27, 89, 248, 0.10) !important;
+    color: #4D7EFA;
+}
+
+.navItemButton:hover .navItemIcon {
+    color: #4D7EFA;
+}
