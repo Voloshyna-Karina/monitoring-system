@@ -6,7 +6,6 @@ import {ChevronLeft, ChevronRight, LogoutOutlined} from "@mui/icons-material";
 import { useLocation, useNavigate } from 'react-router-dom';
 import FlexBetween from '../flex-between';
 import { navMenu } from '../../common/moks/navigate';
-// import Logo from '../../assets/images/side-bar/logo.png';
 
 const SideBarComponent = (props: any) => {
     const [active, setActive] = useState('')
@@ -36,22 +35,24 @@ const SideBarComponent = (props: any) => {
   return (
     <Box component='nav'>
         {isOpen && (
-            <Drawer 
+            <Drawer
                 open={isOpen} 
                 onClose={() => setIsOpen(false)} 
                 variant='persistent' 
                 anchor='left'
+                className='DrawerContainer'
                 sx={{
                     width: drawerWidth,
                     '& .MuiDrawer-paper': {
                         color: '#484E5E',
                         backgroundColor: '#ffffff',
                         boxSizing: 'border-box',
+                        boxShadow: '5px 0px 10px 0px rgba(0, 0, 0, 0.10)',
                         width: drawerWidth
                     }
                 }}
             >
-                <Box width='100%' sx={{borderBottom: '1px solid #757575'}}>
+                <Box className='SideBarContainerLine'>
                     <Box>
                         <FlexBetween>
                             <Box className='BrandTextLogo'>
@@ -64,7 +65,7 @@ const SideBarComponent = (props: any) => {
                             )}
                         </FlexBetween>
                     </Box>
-                    <List sx={{marginBottom: '50px'}}>{renderNavMenu}</List>
+                    <List className='ListRenderNavMenu'>{renderNavMenu}</List>
                 </Box>
                 <Box width='100%'>
                     <List>

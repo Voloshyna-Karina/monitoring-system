@@ -1,0 +1,19 @@
+.TopBarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 40px 42px;
+
+    .HeaderText {
+        font-family: 'Inter';
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .DateText {
+        margin-top: 5px; 
+        margin-bottom: 0px; 
+        font-family: 'Inter'; 
+        font-size: 14px;
+    }
+} 

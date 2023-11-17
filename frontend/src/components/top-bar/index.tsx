@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Grid } from '@mui/material';
+import './styles.css';
 
 const TopBarComponent = () => {
   const [currentDate, setCurrentDate] = useState<string>('');
@@ -15,10 +16,10 @@ const TopBarComponent = () => {
   }, []);
 
   return (
-    <Box display='flex' justifyContent='space-between' px="40px" py="42px" alignContent='center'>
+    <Box className='TopBarContainer'>
         <Box>
-            <Grid sx={{ fontFamily: 'Inter', fontSize: '24px', fontWeight: 700}}>Welcome Karina</Grid>
-            <p style={{marginTop: '5px', marginBottom: '0px', fontFamily: 'Inter', fontSize: '14px'}}>{currentDate}</p>
+            <Grid className='HeaderText'>Welcome Karina</Grid>
+            <p className='DateText'>{currentDate}</p>
         </Box>
     </Box>
   );
