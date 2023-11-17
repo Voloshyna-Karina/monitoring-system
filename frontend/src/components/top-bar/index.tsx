@@ -16,11 +16,13 @@ const TopBarComponent = () => {
   }, []);
 
   return (
-    <Box className='TopBarContainer'>
+    <Box className='TopBarBlock'>
+      <Box className='TopBarContainer'>
         <Box>
             <Grid className='HeaderText'>Welcome Karina</Grid>
             <p className='DateText'>{currentDate}</p>
         </Box>
+      </Box>
     </Box>
   );
 };
