@@ -1,0 +1,32 @@
+.CashRegisterComponentBlock {
+    margin-left: 40px;
+    margin-top: 20px;
+
+    .HeaderText {
+        font-family: 'Inter';
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .CashRegisterContainer {
+        display: flex;
+        align-items: center;
+
+        .CashRegisterList {
+            margin: 0px 20px 10px 0px;
+            border-radius: 5px;
+
+            .CashRegisterListItem {
+                padding: 30px;
+                border-radius: 10px;
+                background: #FFF;
+                box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.03);
+            }
+
+            #AddressCashRegister {
+                font-family: 'Inter';
+                font-size: 16px;
+            }
+        }
+    }
+}

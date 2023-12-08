@@ -3,13 +3,13 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.10);
     margin-left: 40px;
     margin-right: 40px;
-    width: 340%;
+    width: 350%;
 
     .TopBarContainer {
         display: flex;
         justify-content: space-between;
         align-content: center;
-        padding: 40px 0px 30px 0px;
+        padding: 30px 0px;
     
         .HeaderText {
             font-family: 'Inter';
