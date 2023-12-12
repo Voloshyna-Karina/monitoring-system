@@ -9,7 +9,7 @@
         display: flex;
         justify-content: space-between;
         align-content: center;
-        padding: 30px 0px;
+        padding: 30px 0px 20px 0px;
     
         .HeaderText {
             font-family: 'Inter';

@@ -1,34 +1,21 @@
 import React from 'react';
 import "./styles.css";
 import { Box, Typography, Menu, MenuItem, Fade, Button, TextField, Modal} from "@mui/material"; 
-  import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 
   const columns: GridColDef[] = [
-    { field: 'idProduct', headerName: 'ID', width: 70 },
-    { field: 'nameProduct', headerName: 'Name product', width: 130 },
-    { field: 'priceProduct', headerName: 'Price product', type: 'number', width: 130 },
-    { field: 'numbersProduct', headerName: 'Numbers', type: 'number', width: 90 },
-    {
-      field: 'nameProduct',
-      headerName: 'Name product',
-      description: 'This column has a value getter and is not sortable.',
-      sortable: false,
-      width: 160,
-      valueGetter: (params: GridValueGetterParams) =>
-        `${params.row.firstName || ''} ${params.row.lastName || ''}`,
-    },
+    { field: 'id', headerName: 'ID', width: 70 },
+    { field: 'name', headerName: 'Name product', width: 150 },
+    { field: 'price', headerName: 'Price product', type: 'number', width: 100 },
+    { field: 'numbers', headerName: 'Numbers', type: 'number', width: 100 },
   ];
   
   const rows = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-    { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    { id: 1, name: 'Snow', price: 64, numbers: 35 },
+    { id: 2, name: 'Lannister', price: 75, numbers: 42 },
+    { id: 3, name: 'Lannister', price: 87, numbers: 45 },
+    { id: 4, name: 'Stark', price: 34, numbers: 16 },
+    { id: 5, name: 'Targaryen', price: 89, numbers: null },
   ];
   
   const ProductComponent = () => {
@@ -71,6 +58,7 @@ import { Box, Typography, Menu, MenuItem, Fade, Button, TextField, Modal} from "
   
     return (
       <Box className="ProductComponentBlock">
+        <Box className='line'/>
         <Box className='ProductBlockText'>
           <Typography className="HeaderText" variant="h6" component="h2">Товари</Typography>
           <div className='MenuManageTableButton'>

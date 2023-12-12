@@ -35,6 +35,7 @@ const CashRegisterComponent = () => {
 
   return (
     <Box className="CashRegisterComponentBlock">
+      <Box className='line'/>
       <Typography className="HeaderText" variant="h6" component="h2">Каси</Typography>
       <Box className="CashRegisterContainer">
         <List className="CashRegisterList">
@@ -50,7 +51,7 @@ const CashRegisterComponent = () => {
         <Box sx={isModalOpenStyle}>
           {/* Здесь вы можете разместить содержимое вашего всплывающего окна */}
           <Typography variant="h4" fontFamily='Iter' textAlign='center' marginBottom={2}>Додати нову касу</Typography>
-          <TextField fullWidth={true} margin='normal' id="#" label="Номер каси" variant="outlined" placeholder="Введіть номер каси" />
+          <TextField fullWidth={true} margin='normal' id="#" type='number' label="Номер каси" variant="outlined" placeholder="Введіть номер каси" />
           <TextField fullWidth={true} margin='normal' id="#" label="Адреса" variant="outlined" placeholder="Введіть адресу" />
           <Button id="ADDDDD" sx={{marginTop: 2, width: '30%', marginBottom: 1}} variant="contained"
             onClick={() => {

@@ -1,8 +1,12 @@
 .ProductComponentBlock {
     margin-left: 40px;
     margin-top: 20px;
-    /* border-bottom: 1px solid rgba(0, 0, 0, 0.10); */
-    /* width: 300%; */
+
+    .line {
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+        width: 180%;
+    }
 
     .ProductBlockText {
         display: flex;
@@ -14,8 +18,6 @@
         font-size: 24px;
         margin-bottom: 10px;
     }
-
-
 
 
 
