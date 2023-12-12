@@ -1,9 +1,9 @@
 
 .TopBarBlock {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.10); */
     margin-left: 40px;
     margin-right: 40px;
-    width: 350%;
+    /* width: 300%; */
 
     .TopBarContainer {
         display: flex;

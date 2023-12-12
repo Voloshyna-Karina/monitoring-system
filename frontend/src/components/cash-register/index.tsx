@@ -17,13 +17,13 @@ const CashRegisterComponent = () => {
     setIsModalOpen(false);
   };
 
-  const modalStyle = {
+  const isModalOpenStyle = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    backgroundColor: '#ffff',
     borderRadius: 3,
     boxShadow: 30,
     p: 4,
@@ -47,12 +47,18 @@ const CashRegisterComponent = () => {
         </Fab>
       </Box>
       <Modal open={isModalOpen} onClose={handleCloseModal}>
-        <Box sx={modalStyle}>
+        <Box sx={isModalOpenStyle}>
           {/* Здесь вы можете разместить содержимое вашего всплывающего окна */}
           <Typography variant="h4" fontFamily='Iter' textAlign='center' marginBottom={2}>Додати нову касу</Typography>
           <TextField fullWidth={true} margin='normal' id="#" label="Номер каси" variant="outlined" placeholder="Введіть номер каси" />
           <TextField fullWidth={true} margin='normal' id="#" label="Адреса" variant="outlined" placeholder="Введіть адресу" />
-          <Button id="ADDDDD" sx={{marginTop: 2, width: '30%', marginBottom: 1}} variant="contained">Додати</Button>
+          <Button id="ADDDDD" sx={{marginTop: 2, width: '30%', marginBottom: 1}} variant="contained"
+            onClick={() => {
+              // Добавлен обработчик события для кнопки "Додати" во всплывающем окне
+              handleCloseModal();
+              // Здесь можно добавить дополнительную логику для обработки добавления
+            }}
+          >Додати</Button>
         </Box>
       </Modal>
     </Box>
