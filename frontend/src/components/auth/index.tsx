@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import {useLocation} from "react-router-dom";
 import LoginPage from "./login";
 import RegisterPage from "./register";
 import './style.css';
 import { Box } from "@mui/material";
 
-const AuthRootComponent = () => {
+const AuthRootComponent : React.FC = () => {
+    const [login, setLogin] = useState()
+    const [password, setPassword] = useState()
     const location = useLocation()
 
     return (
