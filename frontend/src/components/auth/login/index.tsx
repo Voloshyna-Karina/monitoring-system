@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
 import { TextField, Button, Typography } from "@mui/material";
 
-const LoginPage = (e: any) => {
-  // const {setPassword, setLogin} = props
+const LoginPage = (props: any) => {
+  const {setPassword, setLogin} = props
+  
   return (
     <Fragment>
       <Typography variant="h3" fontFamily="Iter" textAlign="center">Авторизація</Typography>
@@ -25,7 +26,7 @@ const LoginPage = (e: any) => {
         fullWidth={true}
         margin="normal"
         // id="LoginTextField"
-        // onChange={(e) => setLogin(e.target.value)}
+        onChange={(e) => setLogin(e.target.value)}
         label="Логін"
         variant="outlined"
         placeholder="Введіть логін"
@@ -35,7 +36,7 @@ const LoginPage = (e: any) => {
         fullWidth={true}
         margin="normal"
         // id="PasswordTextField"
-        // onChange={(e) => setPassword(e.target.value)}
+        onChange={(e) => setPassword(e.target.value)}
         label="Пароль"
         variant="outlined"
         placeholder="Введіть пароль"

@@ -5,18 +5,22 @@ import RegisterPage from "./register";
 import './style.css';
 import { Box } from "@mui/material";
 
-const AuthRootComponent : React.FC = () => {
+const AuthRootComponent = () => {
     const [login, setLogin] = useState()
     const [password, setPassword] = useState()
     const location = useLocation()
 
+    const handleSubmit = async () => {
+        console.log(login)
+    }
+
     return (
         <div className='root'> 
-            <div className="form">
+            <form className="form" onSubmit={handleSubmit}>
                 <Box className='FormContainer'>
-                    {location.pathname === '/login' ? <LoginPage/> : location.pathname === '/register' ? <RegisterPage/> : null}
+                    {location.pathname === '/login' ? <LoginPage setLogin={setLogin} setPassword={setPassword}/> : location.pathname === '/register' ? <RegisterPage/> : null}
                 </Box>
-            </div>
+            </form>
         </div>
     )
 };
