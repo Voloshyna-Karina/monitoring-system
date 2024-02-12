@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { TextField, Button, Typography } from "@mui/material";
+// import styles from "./styles.css";
 
 const LoginPage = (props: any) => {
   const {setPassword, setLogin} = props
@@ -13,7 +14,8 @@ const LoginPage = (props: any) => {
         fontFamily="Iter"
         textAlign="center"
       >Введіть нижче ваш реєстраційний номер облікової картки платника податків, логін та пароль облікового запису.</Typography>
-      <TextField
+      <TextField 
+      // className={styles.TextField}
         fullWidth={true}
         margin="normal"
         // id="DigitalCodeTextField"
@@ -22,7 +24,8 @@ const LoginPage = (props: any) => {
         placeholder="Введіть РНОКПП"
         sx={{width: 500}}
       />
-      <TextField
+      <TextField 
+      // className={styles.TextField}
         fullWidth={true}
         margin="normal"
         // id="LoginTextField"
@@ -32,7 +35,8 @@ const LoginPage = (props: any) => {
         placeholder="Введіть логін"
         sx={{width: 500}}
       />
-      <TextField
+      <TextField 
+      // className={styles.TextField}
         fullWidth={true}
         margin="normal"
         // id="PasswordTextField"
@@ -42,7 +46,8 @@ const LoginPage = (props: any) => {
         placeholder="Введіть пароль"
         sx={{width: 500}}
       />
-      <Button
+      <Button 
+      // className={styles.Button}
         id="AuthorizationButton"
         type="button"
         sx={{ marginTop: 2, width: "25%", marginBottom: 1 }}

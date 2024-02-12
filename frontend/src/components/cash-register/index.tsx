@@ -7,17 +7,17 @@ import { Fab } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 
 const CashRegisterComponent = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFormOpenNewCashRegister, setIsFormOpenNewCashRegister] = useState(false);
 
   const handleAddNewCashRegister = () => {
-    setIsModalOpen(true);
+    setIsFormOpenNewCashRegister(true);
   };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false);
+    setIsFormOpenNewCashRegister(false);
   };
 
-  const isModalOpenStyle = {
+  const isFormOpenNewCashRegisterStyle = {
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -40,16 +40,19 @@ const CashRegisterComponent = () => {
       <Box className="CashRegisterContainer">
         <List className="CashRegisterList">
           <ListItem className="CashRegisterListItem">
-            <img src={cashier} alt="cash register" width={150} height={150} />
+            <img className="imgCashRegister" src={cashier} alt="cash register" />
+          </ListItem>
+          <ListItem className="CashRegisterListItemGetID">
+            {/* <TextField></TextField> */}
+            <p className="p">hhh</p>
           </ListItem>
         </List>
         <Fab id="AddNewCashRegisterButton" size="small" color="primary" aria-label="add" onClick={handleAddNewCashRegister}>
           <AddIcon />
         </Fab>
       </Box>
-      <Modal open={isModalOpen} onClose={handleCloseModal}>
-        <Box sx={isModalOpenStyle}>
-          {/* Здесь вы можете разместить содержимое вашего всплывающего окна */}
+      <Modal open={isFormOpenNewCashRegister} onClose={handleCloseModal}>
+        <Box  className="isFormOpenNewCashRegisterStyle" sx={isFormOpenNewCashRegisterStyle} >
           <Typography variant="h4" fontFamily='Iter' textAlign='center' marginBottom={2}>Додати нову касу</Typography>
           <TextField fullWidth={true} margin='normal' id="#" type='number' label="Номер каси" variant="outlined" placeholder="Введіть номер каси" />
           <TextField fullWidth={true} margin='normal' id="#" label="Адреса" variant="outlined" placeholder="Введіть адресу" />
