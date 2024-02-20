@@ -45,7 +45,7 @@ import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      width: 400,
+      width: '30%',
       backgroundColor: '#ffff',
       borderRadius: 3,
       boxShadow: 30,
@@ -58,7 +58,6 @@ import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
   
     return (
       <Box className="ProductComponentBlock">
-        <Box className='line'/>
         <Box className='ProductBlockText'>
           <Typography className="HeaderText" variant="h6" component="h2">Товари</Typography>
           <div className='MenuManageTableButton'>

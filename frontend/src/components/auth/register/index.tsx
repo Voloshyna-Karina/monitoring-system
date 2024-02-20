@@ -1,7 +1,37 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { TextField, Button, Typography } from "@mui/material";
 
 const RegisterPage = () => {
+  const [idCode, setIDCode] = useState('');
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleRegister = () => {
+    // Створення об'єкту з даними для відправлення на сервер
+    const data = {
+      idPersonalCode: idCode,
+      userName: login,
+      userPassword: password
+    };
+  
+    console.log('Data to be sent:', data);
+  
+    fetch('/src/api/components/register.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+
   return (
     <Fragment>
       <Typography variant="h3" fontFamily="Iter" textAlign="center">
@@ -19,34 +49,34 @@ const RegisterPage = () => {
       <TextField
         fullWidth={true}
         margin="normal"
-        id="DigitalCodeTextField"
+        onChange={(e) => setIDCode(e.target.value)}
         label="Цифровий код"
         variant="outlined"
         placeholder="Введіть РНОКПП"
-        sx={{width: 500}}
+        sx={{ width: "80%" }}
       />
       <TextField
         fullWidth={true}
         margin="normal"
-        id="LoginTextField"
+        onChange={(e) => setLogin(e.target.value)}
         label="Логін"
         variant="outlined"
         placeholder="Введіть логін"
-        sx={{width: 500}}
+        sx={{ width: "80%" }}
       />
       <TextField
-        fullWidth={true}
+        fullWidth={true}     
         margin="normal"
-        id="PasswordTextField"
+        onChange={(e) => setPassword(e.target.value)}
         label="Пароль"
         variant="outlined"
         placeholder="Введіть пароль"
-        sx={{width: 500}}
+        sx={{ width: "80%" }}
       />
       <Button
-        id="AuthorizationButton"
         sx={{ marginTop: 2, width: "25%", marginBottom: 1 }}
         variant="contained"
+        onClick={handleRegister}
       >
         Вхід
       </Button>

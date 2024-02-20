@@ -23,6 +23,7 @@ const TopBarComponent = () => {
             <p className='DateText'>{currentDate}</p>
         </Box>
       </Box>
+      <Box className='line'/>
     </Box>
   );
 };

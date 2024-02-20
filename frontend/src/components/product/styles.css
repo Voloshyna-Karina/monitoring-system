@@ -2,12 +2,6 @@
     margin-left: 40px;
     margin-top: 20px;
 
-    .line {
-        margin-bottom: 10px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.10);
-        width: 180%;
-    }
-
     .ProductBlockText {
         display: flex;
         column-gap: 15px;
@@ -18,8 +12,6 @@
         font-size: 24px;
         margin-bottom: 10px;
     }
-
-
 
     .handleCloseDialogStyles {
         position: absolute;

@@ -26,7 +26,6 @@ const columns: GridColDef[] = [
 const TransactionComponent = () => {
     return (
         <Box className="TransactionComponentBlock">
-        <Box className='line'/>
         <Typography className="HeaderText" variant="h6" component="h2">Транзакції</Typography>
         <div style={{ height: 490, width: '100%' }}>
           <DataGrid

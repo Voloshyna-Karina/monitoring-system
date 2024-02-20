@@ -1,4 +1,21 @@
 .PersonalOfficeComponentBlock {
+    /* border: 1px #484E5E solid;
+    padding: 20px; */
     margin-left: 40px;
     margin-top: 20px;
+
+    .ComponentTextBlock {
+        margin-bottom: 20px;
+
+        .SupportingText {
+            color: #484E5E;
+            font-size: small;
+        }
+
+        .MainText {
+            margin: 10px 0 10px 0;
+            cursor: pointer;
+            font-size: x-large;
+        }
+    }
 }

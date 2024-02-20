@@ -1,11 +1,17 @@
+.line {
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+    width: 100%;
+}
 
 .TopBarBlock {
     /* border-bottom: 1px solid rgba(0, 0, 0, 0.10); */
     margin-left: 40px;
     margin-right: 40px;
+    flex-wrap: wrap;
     /* width: 300%; */
-
     .TopBarContainer {
+
         display: flex;
         justify-content: space-between;
         align-content: center;
