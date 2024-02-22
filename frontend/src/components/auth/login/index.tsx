@@ -1,23 +1,33 @@
 import React, { Fragment, useState } from "react";
 import { TextField, Button, Typography } from "@mui/material";
 import axios from "axios";
-import { error } from "console";
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = (props: any) => {
-  // const {setPassword, setLogin} = props
-
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = () => {
-    if (login.length === 0) {
-      alert("Enter the data!");
-    } else if (password.length === 0) {
-      alert("Enter the data!");
-    } else {
-      
-    }
-  }
+  const { setPassword, setLogin } = props;
+  const navigate = useNavigate(); 
+  
+  const handleLogin = async () => {
+    navigate('/');
+    // try {
+    //   const response = await axios.post("http://localhost/phpmyadmin/index.php?route=/sql&db=monitoring_system&table=users", {
+    //     login: props.login,
+    //     password: props.password
+    //   });
+  
+    //   if (response.data.success) {
+    //     navigate('/');
+    //   } else {
+    //     navigate('/register');
+    //   }
+    // } catch (error) {
+    //   console.error("Помилка при надсиланні запиту:", error);
+    // }
+  };
+  
+  const handleNavigateClick = () => {
+    navigate('/register');
+  };
   
   return (
     <Fragment>
@@ -53,13 +63,13 @@ const LoginPage = (props: any) => {
         type="button"
         sx={{ marginTop: 2, width: "25%", marginBottom: 1 }}
         variant="contained"
-        onClick={handleSubmit}
+        onClick={handleLogin}
       >
         Вхід
       </Button>
       <Typography variant="body1" sx={{ fontFamily: "Iter" }}>
         У вас немає облікового запису?
-        <span className="incitingText">Реєстрація</span>
+        <span className="incitingText" onClick={handleNavigateClick}>Реєстрація</span>
       </Typography>
     </Fragment>
   );

@@ -1,27 +1,23 @@
 <?php
 require_once '../server.php';
 
-$data = json_decode(file_get_contents('php://input'), true);
+$idCode = $_POST['idCode'];
+$login = $_POST['login'];
+$password = $_POST['password'];
 
-$idPersonalCode = $data['idCode'];
-$userName = $data['login'];
-$userPassword = $data['password'];
+$idCode = $conn->read_exif_data($idCode);
+$login = $conn->real_escape_string($login);
+$password = $conn->real_escape_string($password);
 
-$sql = "INSERT INTO users (idCode, login, password) VALUES ('$idPersonalCode', '$userName', '$userPassword')";
+$password = password_hash($password, PASSWORD_BCRYPT);
+
+$sql = "INSERT INTO `users`(`idPersonalCode`, `userName`, `userPassword`) VALUES ('[$idCode]','[$login]','[$password]')";
 
 if ($conn->query($sql) === TRUE) {
-    $response = ["success" => true, "message" => "Дані успішно додані до бази даних"];
+    echo json_encode(["success" => true]);
 } else {
-    $response = [
-        "success" => false,
-        "message" => "Помилка при додаванні даних: " . $conn->error,
-        "sql" => $sql  // Додаємо сам SQL-запит до виведення
-    ];
+    echo json_encode(["success" => false, "error" => $conn->error]);
 }
-
-// Отправка результата клиенту
-header('Content-Type: application/json');
-echo json_encode($response);
 
 $conn->close();
 ?>

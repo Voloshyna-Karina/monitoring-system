@@ -1,35 +1,36 @@
 import React, { Fragment, useState } from "react";
 import { TextField, Button, Typography } from "@mui/material";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
   const [idCode, setIDCode] = useState('');
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleRegister = () => {
-    // Створення об'єкту з даними для відправлення на сервер
-    const data = {
-      idPersonalCode: idCode,
-      userName: login,
-      userPassword: password
-    };
+  const navigate = useNavigate();
   
-    console.log('Data to be sent:', data);
+  const handleRegister = async () => {
+    navigate('/');
+    // try {
+    //   const response = await axios.post("http://localhost/phpmyadmin/index.php?route=/sql&db=monitoring_system&table=users", {
+    //     idCode: idCode,
+    //     login: login,
+    //     password: password
+    //   });
   
-    fetch('/src/api/components/register.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    //   if (response.data.success) {
+    //     console.log("Користувач успішно зареєстрований");
+    //     navigate('/');
+    //   } else {
+    //     console.error("Помилка під час реєстрації:", response.data.error);
+    //   }
+    // } catch (error) {
+    //   console.error("Помилка при надсиланні запиту:", error);
+    // }
+  };
+  
+  const handleNavigateClick = () => {
+    navigate('/login');
   };
 
   return (
@@ -82,7 +83,7 @@ const RegisterPage = () => {
       </Button>
       <Typography variant="body1" sx={{ fontFamily: "Iter" }}>
         У вас вже є обліковий запис?
-        <span className="incitingText">Авторизація</span>
+        <span className="incitingText" onClick={handleNavigateClick}>Авторизація</span>
       </Typography>
     </Fragment>
   );

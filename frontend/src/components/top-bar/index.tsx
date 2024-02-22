@@ -19,7 +19,7 @@ const TopBarComponent = () => {
     <Box className='TopBarBlock'>
       <Box className='TopBarContainer'>
         <Box>
-            <Grid className='HeaderText'>Welcome Karina</Grid>
+            <Grid className='HeaderText'>Welcome to PROFITPILOT</Grid>
             <p className='DateText'>{currentDate}</p>
         </Box>
       </Box>

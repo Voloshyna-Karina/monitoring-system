@@ -13,6 +13,10 @@ const SideBarComponent = (props: any) => {
     const {pathname} = useLocation()
     const navigate = useNavigate()
 
+    const handleNavigateClick = () => {
+        navigate('/login');
+      };
+
     useEffect(() => {
         setActive(pathname)
     }, [pathname])
@@ -75,7 +79,7 @@ const SideBarComponent = (props: any) => {
                                     <LogoutOutlined/>
                                 </ListItemIcon>
                                 <ListItemText>
-                                    <Typography>Вихід</Typography>
+                                    <Typography onClick={handleNavigateClick}>Вихід</Typography>
                                 </ListItemText>
                             </ListItemButton>
                         </ListItem>
