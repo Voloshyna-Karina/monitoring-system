@@ -4,25 +4,23 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 const LoginPage = (props: any) => {
-  const { setPassword, setLogin } = props;
-  const navigate = useNavigate(); 
-  
+  const { setLogin, setPassword } = props;
+  const navigate = useNavigate();
+  const [login, setLoginLocal] = useState("");
+  const [password, setPasswordLocal] = useState("");
+
   const handleLogin = async () => {
-    navigate('/');
-    // try {
-    //   const response = await axios.post("http://localhost/phpmyadmin/index.php?route=/sql&db=monitoring_system&table=users", {
-    //     login: props.login,
-    //     password: props.password
-    //   });
-  
-    //   if (response.data.success) {
-    //     navigate('/');
-    //   } else {
-    //     navigate('/register');
-    //   }
-    // } catch (error) {
-    //   console.error("Помилка при надсиланні запиту:", error);
-    // }
+    try {
+      const response = await axios.post('http://localhost:3000/login', { login, password });
+
+      if (response.data.success) {
+        navigate('/');
+      } else {
+        console.log(response.data.message);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+    }
   };
   
   const handleNavigateClick = () => {
@@ -51,7 +49,7 @@ const LoginPage = (props: any) => {
       <TextField 
         fullWidth={true}
         margin="normal"
-        // id="password"
+        type="password"
         onChange={(e) => setPassword(e.target.value)}
         label="Пароль"
         variant="outlined"

@@ -10,23 +10,17 @@ const RegisterPage = () => {
   const navigate = useNavigate();
   
   const handleRegister = async () => {
-    navigate('/');
-    // try {
-    //   const response = await axios.post("http://localhost/phpmyadmin/index.php?route=/sql&db=monitoring_system&table=users", {
-    //     idCode: idCode,
-    //     login: login,
-    //     password: password
-    //   });
-  
-    //   if (response.data.success) {
-    //     console.log("Користувач успішно зареєстрований");
-    //     navigate('/');
-    //   } else {
-    //     console.error("Помилка під час реєстрації:", response.data.error);
-    //   }
-    // } catch (error) {
-    //   console.error("Помилка при надсиланні запиту:", error);
-    // }
+    try {
+      const response = await axios.post('http://localhost:3000/register', { idCode, login, password });
+
+      if (response.data.success) {
+        navigate('/');
+      } else {
+        console.log(response.data.message);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+    }
   };
   
   const handleNavigateClick = () => {
@@ -50,6 +44,7 @@ const RegisterPage = () => {
       <TextField
         fullWidth={true}
         margin="normal"
+        value={idCode}
         onChange={(e) => setIDCode(e.target.value)}
         label="Цифровий код"
         variant="outlined"
@@ -59,6 +54,7 @@ const RegisterPage = () => {
       <TextField
         fullWidth={true}
         margin="normal"
+        value={login}
         onChange={(e) => setLogin(e.target.value)}
         label="Логін"
         variant="outlined"
@@ -68,6 +64,8 @@ const RegisterPage = () => {
       <TextField
         fullWidth={true}     
         margin="normal"
+        value={password}
+        type="password"
         onChange={(e) => setPassword(e.target.value)}
         label="Пароль"
         variant="outlined"

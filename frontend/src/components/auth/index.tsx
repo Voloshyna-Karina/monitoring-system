@@ -10,13 +10,13 @@ const AuthRootComponent = () => {
     const [password, setPassword] = useState()
     const location = useLocation()
 
-    const handleSubmit = async () => {
-        console.log(login)
-    }
+    // const handleSubmit = async () => {
+    //     console.log(login)
+    // }
 
     return (
         <div className='root'> 
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form">
                 <Box className='FormContainer'>
                     {location.pathname === '/login' ? <LoginPage setLogin={setLogin} setPassword={setPassword}/> : location.pathname === '/register' ? <RegisterPage/> : null}
                 </Box>

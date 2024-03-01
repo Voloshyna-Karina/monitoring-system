@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Routes, Route} from "react-router-dom";
 import PrivateRoute from './utils/router/privateRoute';
 import AuthRootComponent from './components/auth';
@@ -8,8 +8,18 @@ import ProductComponent from './components/product';
 import TransactionComponent from './components/transaction';
 import AnalyticComponent from './components/analytic';
 import PersonalOfficeComponent from './components/personal-office';
+import { response } from 'express';
 
 function App() {
+
+  // const [data, setData] = useState(null)
+
+  // useEffect(() => {
+  //   fetch('/api')
+  //   .then(response => response.json())
+  //   .then(response => setData(response.message))
+  // }, [])
+
   return (
     <LayoutComponent>
       <div className="App">
