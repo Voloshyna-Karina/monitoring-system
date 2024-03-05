@@ -11,16 +11,53 @@ const LoginPage = (props: any) => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/login', { login, password });
+      const response = await axios.post('/frontend/src/api/api.php', {
+        login: login,
+        password: password,
+      });
 
       if (response.data.success) {
+        // Успішний вхід
         navigate('/');
+        console.log('Успішний вхід');
       } else {
-        console.log(response.data.message);
+        // Невірний логін або пароль
+        console.error(response.data.message);
       }
     } catch (error) {
-      console.error('Error during login:', error);
+      console.error('Помилка при виклику API:', error);
     }
+
+    // try {
+    //   const response = await axios.post('http://localhost/api.php', { login, password });
+      
+    //   if (response.data.success) {
+    //     // Успешная авторизация
+    //     setSuccess(true);
+    //     setError(null);
+    //     // Возможно, вам также нужно что-то сделать с токеном или другими данными, возвращаемыми сервером
+    //   } else {
+    //     // Неудачная авторизация
+    //     setSuccess(false);
+    //     setError("Неверный логин или пароль");
+    //   }
+    // } catch (error) {
+    //   console.error('Ошибка при отправке запроса:', error);
+    //   setSuccess(false);
+    //   setError("Произошла ошибка при авторизации");
+    // }
+
+    // try {
+    //   const response = await axios.post('http://localhost:3000/login', { login, password });
+
+    //   if (response.data.success) {
+    //     navigate('/');
+    //   } else {
+    //     console.log(response.data.message);
+    //   }
+    // } catch (error) {
+    //   console.error('Error during login:', error);
+    // }
   };
   
   const handleNavigateClick = () => {
@@ -39,7 +76,6 @@ const LoginPage = (props: any) => {
       <TextField 
         fullWidth={true}
         margin="normal"
-        // id="login"
         onChange={(e) => setLogin(e.target.value)}
         label="Логін"
         variant="outlined"

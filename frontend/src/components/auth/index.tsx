@@ -10,10 +10,6 @@ const AuthRootComponent = () => {
     const [password, setPassword] = useState()
     const location = useLocation()
 
-    // const handleSubmit = async () => {
-    //     console.log(login)
-    // }
-
     return (
         <div className='root'> 
             <form className="form">

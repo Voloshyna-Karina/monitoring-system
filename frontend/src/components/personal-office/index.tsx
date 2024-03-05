@@ -127,7 +127,7 @@ const PersonalOfficeComponent: React.FC = () => {
               Зберегти
             </Button>
             <Button id="ADDDDD" variant="contained" onClick={handleCloseModal}>
-              Відмінити
+              Видалити
             </Button>
           </Box>
         </Box>
