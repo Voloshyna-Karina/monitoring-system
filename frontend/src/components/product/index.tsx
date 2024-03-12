@@ -5,29 +5,29 @@ import ProductTable from "./productTable";
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
-  { field: "name", headerName: "Name product", width: 150 },
-  { field: "price", headerName: "Price product", type: "number", width: 100 },
-  { field: "numbers", headerName: "Numbers", type: "number", width: 100 },
+  { field: "nameProduct", headerName: "Name product", width: 150 },
+  { field: "priceProduct", headerName: "Price product", type: "number", width: 100 },
+  { field: "numberProduct", headerName: "Numbers", type: "number", width: 100 },
 ];
 
-// const rows = [
-//   { id: 1, name: "Snow", price: 64, numbers: 35 },
-//   { id: 2, name: "Lannister", price: 75, numbers: 42 },
-//   { id: 3, name: "Lannister", price: 87, numbers: 45 },
-//   { id: 4, name: "Stark", price: 34, numbers: 16 },
-//   { id: 5, name: "Targaryen", price: 89, numbers: null },
-// ];
+const rows = [
+  { id: 1, nameProduct: "Snow", priceProduct: 64, numberProduct: 35 },
+  { id: 2, nameProduct: "Lannister", priceProduct: 75, numberProduct: 42 },
+  { id: 3, nameProduct: "Lannister", priceProduct: 87, numberProduct: 45 },
+  { id: 4, nameProduct: "Stark", priceProduct: 34, numberProduct: 16 },
+  { id: 5, nameProduct: "Targaryen", priceProduct: 89, numberProduct: null },
+];
 
 const ProductComponent = () => {
 
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost/phpmyadmin/getProducts.php")
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost/phpmyadmin/getProducts.php")
+  //     .then((response) => response.json())
+  //     .then((data) => setData(data))
+  //     .catch((error) => console.error("Error fetching data:", error));
+  // }, []);
 
 
   

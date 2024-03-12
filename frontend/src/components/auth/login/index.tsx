@@ -10,22 +10,25 @@ const LoginPage = (props: any) => {
   const [password, setPasswordLocal] = useState("");
 
   const handleLogin = async () => {
+    navigate('/');
     try {
-      const response = await axios.post('/frontend/src/api/api.php', {
-        login: login,
-        password: password,
+      if (!login || !password) {
+        console.log('Please fill in all fields.');
+        return;
+      }
+
+      const response = await axios.post('http://localhost:3000/api/users/', {
+        userName: login,
+        userPassword: password
       });
 
       if (response.data.success) {
-        // Успішний вхід
         navigate('/');
-        console.log('Успішний вхід');
       } else {
-        // Невірний логін або пароль
-        console.error(response.data.message);
+        console.log(response.data.message);
       }
     } catch (error) {
-      console.error('Помилка при виклику API:', error);
+      console.error('Error during registration:', error);
     }
 
     // try {
@@ -48,7 +51,7 @@ const LoginPage = (props: any) => {
     // }
 
     // try {
-    //   const response = await axios.post('http://localhost:3000/login', { login, password });
+    //   const response = await axios.post('api/components/login.php', { login, password });
 
     //   if (response.data.success) {
     //     navigate('/');

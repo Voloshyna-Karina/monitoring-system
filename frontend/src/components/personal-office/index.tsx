@@ -61,29 +61,22 @@ const PersonalOfficeComponent: React.FC = () => {
     <Box className="PersonalOfficeComponentBlock">
       <Box className="ComponentTextBlock">
         <Typography className="SupportingText">Цифровий код (РНОКПП): {idCode}</Typography>
-        <Typography className="MainText">ggg</Typography>
+        <Typography className="MainText">15434</Typography>
       </Box>
       <Box className="ComponentTextBlock">
         <Typography className="SupportingText">Логін:</Typography>
-        <Typography className="MainText">ggg</Typography>
+        <Typography className="MainText">Karina</Typography>
       </Box>
       <Box className="ComponentTextBlock">
         <Typography className="SupportingText">Пароль:</Typography>
-        <Typography className="MainText">ggg</Typography>
+        <Typography className="MainText">12345</Typography>
       </Box>
       <Button variant="outlined" onClick={handleAddNewProductComponent}>Редагувати</Button>
 
 
       <Modal open={isModalOpen} onClose={handleCloseModal}>
         <Box sx={isModalOpenStyle}>
-          <Typography
-            variant="h4"
-            fontFamily="Iter"
-            textAlign="center"
-            marginBottom={2}
-          >
-            Редагувати особисті дані
-          </Typography>
+          <Typography variant="h4" fontFamily="Iter" textAlign="center" marginBottom={2}>Редагувати особисті дані</Typography>
           <TextField
             fullWidth={true}
             margin="normal"
@@ -118,17 +111,8 @@ const PersonalOfficeComponent: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Box sx={{ display: "flex", marginTop: 2, marginBottom: 1 }}>
-            <Button
-              id="ADDDDD"
-              sx={{ marginRight: 2 }}
-              variant="contained"
-              onClick={handleEditUsers}
-            >
-              Зберегти
-            </Button>
-            <Button id="ADDDDD" variant="contained" onClick={handleCloseModal}>
-              Видалити
-            </Button>
+            <Button id="ADDDDD" sx={{ marginRight: 2 }} variant="contained" onClick={handleEditUsers}>Зберегти</Button>
+            <Button id="ADDDDD" variant="contained" onClick={handleCloseModal}>Видалити</Button>
           </Box>
         </Box>
       </Modal>

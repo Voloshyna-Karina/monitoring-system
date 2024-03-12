@@ -1,0 +1,9 @@
+.AnalyticComponentBlockPie {
+    margin-left: 40px;
+    margin-top: 20px;
+
+    .linkGroup:hover {
+        color: rgb(0, 127, 255);
+        cursor: pointer;
+    }
+}

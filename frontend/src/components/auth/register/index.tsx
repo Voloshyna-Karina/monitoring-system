@@ -8,10 +8,19 @@ const RegisterPage = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  
+
   const handleRegister = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/register', { idCode, login, password });
+      if (!idCode || !login || !password) {
+        console.log('Please fill in all fields.');
+        return;
+      }
+
+      const response = await axios.post('http://localhost:3000/monitoring_system/users/', {
+        idPersonalCode: idCode,
+        userName: login,
+        userPassword: password
+      });
 
       if (response.data.success) {
         navigate('/');
@@ -19,10 +28,10 @@ const RegisterPage = () => {
         console.log(response.data.message);
       }
     } catch (error) {
-      console.error('Error during login:', error);
+      console.error('Error during registration:', error);
     }
   };
-  
+
   const handleNavigateClick = () => {
     navigate('/login');
   };
@@ -38,8 +47,7 @@ const RegisterPage = () => {
         fontFamily="Iter"
         textAlign="center"
       >
-        Введіть нижче ваш реєстраційний номер облікової картки платника
-        податків, логін та пароль облікового запису.
+        Введіть нижче ваш реєстраційний номер облікової картки платника податків, логін та пароль облікового запису.
       </Typography>
       <TextField
         fullWidth={true}
@@ -77,7 +85,7 @@ const RegisterPage = () => {
         variant="contained"
         onClick={handleRegister}
       >
-        Вхід
+        Реєстрація
       </Button>
       <Typography variant="body1" sx={{ fontFamily: "Iter" }}>
         У вас вже є обліковий запис?

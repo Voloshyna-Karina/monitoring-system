@@ -6,6 +6,8 @@
 
     .ComponentTextBlock {
         margin-bottom: 20px;
+        border-radius: 25px;
+        padding: 5px 0px 0px 10px;
 
         .SupportingText {
             color: #484E5E;
@@ -14,8 +16,9 @@
 
         .MainText {
             margin: 10px 0 10px 0;
-            cursor: pointer;
+            /* cursor: pointer; */
             font-size: x-large;
         }
     }
+
 }

@@ -17,16 +17,12 @@ const columns: GridColDef[] = [
   ];
   
   const rows = [
+    {id: 54634, idProduct: 53624, idCashRegister: 74526, nameProduct: 'Telephone', priceProduct: 536, numberProduct: 44, addressCashRegister: 'Ivan Franko Square, 3, Kyiv', sumTransaction: 5423},
+    {id: 54634, idProduct: 53624, idCashRegister: 74526, nameProduct: 'Telephone', priceProduct: 536, numberProduct: 44, addressCashRegister: 'Ivan Franko Square, 3, Kyiv', sumTransaction: 5423},
+    {id: 54634, idProduct: 53624, idCashRegister: 74526, nameProduct: 'Telephone', priceProduct: 536, numberProduct: 44, addressCashRegister: 'Ivan Franko Square, 3, Kyiv', sumTransaction: 5423},
+    {id: 54634, idProduct: 53624, idCashRegister: 74526, nameProduct: 'Telephone', priceProduct: 536, numberProduct: 44, addressCashRegister: 'Ivan Franko Square, 3, Kyiv', sumTransaction: 5423},
+    {id: 54634, idProduct: 53624, idCashRegister: 74526, nameProduct: 'Telephone', priceProduct: 536, numberProduct: 44, addressCashRegister: 'Ivan Franko Square, 3, Kyiv', sumTransaction: 5423},
     {id: 54634, idProduct: 53624, idCashRegister: 74526, nameProduct: 'Telephone', priceProduct: 536, numberProduct: 44, addressCashRegister: 'Ivan Franko Square, 3, Kyiv', sumTransaction: 5423}
-    // { id: 54634, sumTransaction: 'Snow', priceProduct: 56, numbersProduct: 35, sumProduct: 25 },
-    // { id: 2, sumTransaction: 'Lannister', priceProduct: 66, numbersProduct: 42, sumProduct: 25  },
-    // { id: 3, sumTransaction: 'Lannister', priceProduct: 22, numbersProduct: 45, sumProduct: 25  },
-    // { id: 4, sumTransaction: 'Stark', priceProduct: 85, numbersProduct: 16, sumProduct: 25  },
-    // { id: 5, sumTransaction: 'Targaryen', priceProduct: 65, numbersProduct: null, sumProduct: 25  },
-    // { id: 6, sumTransaction: 'Melisandre', priceProduct: null, numbersProduct: 150, sumProduct: 25  },
-    // { id: 7, sumTransaction: 'Clifford', priceProduct: null, numbersProduct: 44, sumProduct: 25  },
-    // { id: 8, sumTransaction: 'Frances', priceProduct: 63, numbersProduct: 36, sumProduct: 25  },
-    // { id: 9, sumTransaction: 'Roxie', priceProduct: 97, numbersProduct: 65, sumProduct: 25  },
   ];
 
 const TransactionComponent = () => {
